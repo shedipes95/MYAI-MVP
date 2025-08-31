@@ -172,7 +172,7 @@ export default function Layout({ children }: LayoutProps) {
         )}
 
         {/* Main Content */}
-        <main className="h-full overflow-auto p-4">{children}</main>
+        <main className="h-full overflow-auto">{children}</main>
       </div>
     </div>
   );
