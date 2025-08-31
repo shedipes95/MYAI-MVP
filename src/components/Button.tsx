@@ -13,8 +13,8 @@ export default function Button({
   const base =
     "inline-flex items-center justify-center rounded-lg px-3 py-2 text-sm font-medium transition";
   const variants = {
-    primary: "bg-blue-600 text-white hover:bg-blue-700 active:bg-blue-800",
-    ghost: "bg-transparent text-gray-700 hover:bg-gray-100",
+    primary: "bg-purple-600 text-white hover:bg-purple-700 active:bg-purple-800",
+    ghost: "bg-transparent text-purple-700 hover:bg-purple-100",
   } as const;
 
   return (

@@ -12,13 +12,13 @@ export default function Loans() {
 
   return (
     <div className="space-y-4">
-      <h2 className="text-xl font-semibold">Loans</h2>
+      <h2 className="text-xl font-semibold text-purple-900">Loans</h2>
       <Card>
-        {loansLoading && <div className="text-sm text-gray-500">Loading loans…</div>}
+        {loansLoading && <div className="text-sm text-purple-500">Loading loans…</div>}
         {!loansLoading && (
           <table className="w-full text-sm">
             <thead>
-              <tr className="text-left text-gray-500">
+              <tr className="text-left text-purple-600">
                 <th className="py-2">Name</th>
                 <th className="py-2">APR</th>
                 <th className="py-2 text-right">Monthly</th>
@@ -26,10 +26,12 @@ export default function Loans() {
             </thead>
             <tbody>
               {loans.map((l) => (
-                <tr key={l.id} className="border-t">
-                  <td className="py-2">{l.name}</td>
-                  <td className="py-2">{l.apr}%</td>
-                  <td className="py-2 text-right font-medium">{eur(l.monthlyPayment)}</td>
+                <tr key={l.id} className="border-t border-purple-200">
+                  <td className="py-2 text-purple-800">{l.name}</td>
+                  <td className="py-2 text-purple-600">{l.apr}%</td>
+                  <td className="py-2 text-right font-medium text-purple-800">
+                    {eur(l.monthlyPayment)}
+                  </td>
                 </tr>
               ))}
             </tbody>

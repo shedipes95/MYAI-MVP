@@ -1,12 +1,9 @@
 export default function MyAILogo() {
   return (
-    <div className="flex items-center space-x-3">
+    <div className="flex items-center">
       <h1 className="text-3xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-pink-500">
         MyAI
       </h1>
-      <div className="w-14 h-14 bg-gradient-to-tr from-blue-500 via-purple-600 to-pink-500 rounded-full flex items-center justify-center shadow-xl">
-        <span className="text-white text-xl font-bold">GO</span>
-      </div>
     </div>
   );
 }

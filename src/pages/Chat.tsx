@@ -29,46 +29,46 @@ export default function Chat() {
   return (
     <div className="h-full flex flex-col">
       {/* Header */}
-      <div className="flex-shrink-0 bg-white border-b px-6 py-4">
+      <div className="flex-shrink-0 bg-white border-b border-purple-200 px-6 py-4">
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-lg">
+          <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-purple-700 rounded-full flex items-center justify-center text-white font-bold text-lg">
             AI
           </div>
           <div>
-            <h2 className="text-xl font-semibold text-gray-800">MyAI Assistant</h2>
-            <p className="text-sm text-gray-500">Your personal finance chatbot</p>
+            <h2 className="text-xl font-semibold text-purple-900">MyAI Assistant</h2>
+            <p className="text-sm text-purple-600">Your personal finance chatbot</p>
           </div>
         </div>
       </div>
 
       {/* Chat Messages */}
-      <div ref={listRef} className="flex-1 overflow-auto bg-gray-50 p-4 space-y-4">
+      <div ref={listRef} className="flex-1 overflow-auto bg-purple-50 p-4 space-y-4">
         {chat.length === 0 && (
           <div className="text-center py-8">
-            <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4">
+            <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-700 rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4">
               AI
             </div>
-            <h3 className="text-lg font-semibold text-gray-700 mb-2">Welcome to MyAI!</h3>
-            <p className="text-gray-500 text-sm max-w-md mx-auto">
+            <h3 className="text-lg font-semibold text-purple-800 mb-2">Welcome to MyAI!</h3>
+            <p className="text-purple-600 text-sm max-w-md mx-auto">
               I'm here to help you with your finances. Ask me about budgeting, expenses, savings, or
               any financial questions you have!
             </p>
             <div className="mt-6 grid grid-cols-1 gap-2 max-w-sm mx-auto">
               <button
                 onClick={() => setMsg("What's my current budget status?")}
-                className="bg-white hover:bg-gray-50 border rounded-lg p-3 text-left text-sm text-gray-700 transition-colors"
+                className="bg-white hover:bg-purple-50 border border-purple-200 rounded-lg p-3 text-left text-sm text-purple-700 transition-colors"
               >
                 💰 What's my current budget status?
               </button>
               <button
                 onClick={() => setMsg("How can I save more money?")}
-                className="bg-white hover:bg-gray-50 border rounded-lg p-3 text-left text-sm text-gray-700 transition-colors"
+                className="bg-white hover:bg-purple-50 border border-purple-200 rounded-lg p-3 text-left text-sm text-purple-700 transition-colors"
               >
                 🏦 How can I save more money?
               </button>
               <button
                 onClick={() => setMsg("Analyze my spending patterns")}
-                className="bg-white hover:bg-gray-50 border rounded-lg p-3 text-left text-sm text-gray-700 transition-colors"
+                className="bg-white hover:bg-purple-50 border border-purple-200 rounded-lg p-3 text-left text-sm text-purple-700 transition-colors"
               >
                 📊 Analyze my spending patterns
               </button>
@@ -80,19 +80,21 @@ export default function Chat() {
           <div key={m.id} className={`flex ${m.from === "user" ? "justify-end" : "justify-start"}`}>
             <div
               className={`max-w-xs lg:max-w-md px-4 py-3 rounded-2xl ${
-                m.from === "user" ? "bg-blue-500 text-white" : "bg-white border shadow-sm"
+                m.from === "user"
+                  ? "bg-purple-600 text-white"
+                  : "bg-white border border-purple-200 shadow-sm"
               }`}
             >
               <div className="text-sm">
                 {m.from === "ai" && (
                   <div className="flex items-center gap-2 mb-1">
-                    <div className="w-5 h-5 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white text-xs font-bold">
+                    <div className="w-5 h-5 bg-gradient-to-br from-purple-500 to-purple-700 rounded-full flex items-center justify-center text-white text-xs font-bold">
                       AI
                     </div>
-                    <span className="text-xs text-gray-500 font-medium">MyAI Assistant</span>
+                    <span className="text-xs text-purple-600 font-medium">MyAI Assistant</span>
                   </div>
                 )}
-                <p className={m.from === "user" ? "text-white" : "text-gray-800"}>{m.text}</p>
+                <p className={m.from === "user" ? "text-white" : "text-purple-800"}>{m.text}</p>
               </div>
             </div>
           </div>
@@ -100,19 +102,19 @@ export default function Chat() {
 
         {chatSending && (
           <div className="flex justify-start">
-            <div className="max-w-xs lg:max-w-md px-4 py-3 rounded-2xl bg-white border shadow-sm">
+            <div className="max-w-xs lg:max-w-md px-4 py-3 rounded-2xl bg-white border border-purple-200 shadow-sm">
               <div className="flex items-center gap-2">
-                <div className="w-5 h-5 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white text-xs font-bold">
+                <div className="w-5 h-5 bg-gradient-to-br from-purple-500 to-purple-700 rounded-full flex items-center justify-center text-white text-xs font-bold">
                   AI
                 </div>
                 <div className="flex space-x-1">
-                  <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"></div>
+                  <div className="w-2 h-2 bg-purple-400 rounded-full animate-bounce"></div>
                   <div
-                    className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"
+                    className="w-2 h-2 bg-purple-400 rounded-full animate-bounce"
                     style={{ animationDelay: "0.1s" }}
                   ></div>
                   <div
-                    className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"
+                    className="w-2 h-2 bg-purple-400 rounded-full animate-bounce"
                     style={{ animationDelay: "0.2s" }}
                   ></div>
                 </div>
@@ -123,11 +125,11 @@ export default function Chat() {
       </div>
 
       {/* Input Area */}
-      <div className="flex-shrink-0 bg-white border-t p-4">
+      <div className="flex-shrink-0 bg-white border-t border-purple-200 p-4">
         <form onSubmit={onSubmit} className="flex gap-3">
           <input
             type="text"
-            className="flex-1 rounded-full border border-gray-300 px-6 py-3 text-sm outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-colors"
+            className="flex-1 rounded-full border border-purple-300 px-6 py-3 text-sm outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 transition-colors text-purple-900"
             placeholder="Ask me anything about your finances..."
             value={msg}
             onChange={(e) => setMsg(e.target.value)}
@@ -136,7 +138,7 @@ export default function Chat() {
           <button
             type="submit"
             disabled={chatSending || !msg.trim()}
-            className="bg-blue-500 hover:bg-blue-600 disabled:bg-gray-300 text-white font-semibold px-6 py-3 rounded-full transition-colors flex items-center gap-2"
+            className="bg-purple-600 hover:bg-purple-700 disabled:bg-gray-300 text-white font-semibold px-6 py-3 rounded-full transition-colors flex items-center gap-2"
           >
             {chatSending ? (
               <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>

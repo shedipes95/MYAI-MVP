@@ -61,12 +61,12 @@ export default function Login() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-4 bg-gray-50">
+    <div className="min-h-screen flex items-center justify-center p-4 bg-purple-50">
       <div className="w-full max-w-sm">
         <Card className="w-full shadow-lg">
           <div className="text-center mb-6">
-            <h2 className="text-2xl font-semibold text-gray-800">Welcome Back</h2>
-            <p className="text-sm text-gray-600 mt-2">Sign in to your MyAI account</p>
+            <h2 className="text-2xl font-semibold text-purple-900">Welcome Back</h2>
+            <p className="text-sm text-purple-700 mt-2">Sign in to your MyAI account</p>
           </div>
 
           {authError && (
@@ -77,13 +77,15 @@ export default function Login() {
 
           <form onSubmit={onSubmit} className="space-y-4">
             <div>
-              <label className="mb-2 block text-sm font-medium text-gray-700">Email Address</label>
+              <label className="mb-2 block text-sm font-medium text-purple-700">
+                Email Address
+              </label>
               <input
                 type="email"
-                className={`w-full rounded-lg border px-4 py-3 text-sm outline-none transition-colors ${
+                className={`w-full rounded-lg border px-4 py-3 text-sm outline-none transition-colors text-purple-900 ${
                   fieldErrors.email
                     ? "border-red-300 focus:border-red-500 focus:ring-2 focus:ring-red-500/20"
-                    : "border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20"
+                    : "border-purple-300 focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20"
                 }`}
                 placeholder="john@example.com"
                 value={formData.email}
@@ -98,20 +100,20 @@ export default function Login() {
 
             <div>
               <div className="flex justify-between items-center mb-2">
-                <label className="block text-sm font-medium text-gray-700">Password</label>
+                <label className="block text-sm font-medium text-purple-700">Password</label>
                 <Link
                   to="/forgot-password"
-                  className="text-xs text-blue-600 hover:text-blue-500 transition-colors"
+                  className="text-xs text-purple-600 hover:text-purple-500 transition-colors"
                 >
                   Forgot password?
                 </Link>
               </div>
               <input
                 type="password"
-                className={`w-full rounded-lg border px-4 py-3 text-sm outline-none transition-colors ${
+                className={`w-full rounded-lg border px-4 py-3 text-sm outline-none transition-colors text-purple-900 ${
                   fieldErrors.password
                     ? "border-red-300 focus:border-red-500 focus:ring-2 focus:ring-red-500/20"
-                    : "border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20"
+                    : "border-purple-300 focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20"
                 }`}
                 placeholder="••••••••"
                 value={formData.password}
@@ -129,11 +131,11 @@ export default function Login() {
           </form>
 
           <div className="mt-6 text-center">
-            <p className="text-sm text-gray-600">
+            <p className="text-sm text-purple-600">
               Don't have an account?{" "}
               <Link
                 to="/signup"
-                className="font-medium text-blue-600 hover:text-blue-500 transition-colors"
+                className="font-medium text-purple-600 hover:text-purple-500 transition-colors"
               >
                 Create one
               </Link>

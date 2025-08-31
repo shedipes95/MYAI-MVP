@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useAppStore } from "@/store/useAppStore";
+import MyAILogo from "@/components/MyAILogo";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -37,29 +38,37 @@ export default function Layout({ children }: LayoutProps) {
       {/* Top Bar */}
       <header
         className={`p-4 flex items-center justify-between ${
-          isHomepage ? "bg-transparent text-gray-800" : "bg-blue-600 text-white shadow-lg"
+          isHomepage
+            ? "bg-purple-50 text-purple-800 border-none"
+            : "bg-purple-600 text-white shadow-lg"
         }`}
+        style={isHomepage ? { boxShadow: "none", borderBottom: "none" } : {}}
       >
         <div className="flex items-center gap-4">
           <button
             onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-            className={`p-2 rounded-lg transition-colors ${
-              isHomepage ? "hover:bg-gray-200" : "hover:bg-blue-700"
-            }`}
+            className="p-2 rounded-lg transition-colors"
+            style={{ backgroundColor: "transparent" }}
           >
             <div className="w-6 h-6 flex flex-col justify-center space-y-1">
-              <div className={`w-full h-0.5 ${isHomepage ? "bg-gray-800" : "bg-white"}`}></div>
-              <div className={`w-full h-0.5 ${isHomepage ? "bg-gray-800" : "bg-white"}`}></div>
-              <div className={`w-full h-0.5 ${isHomepage ? "bg-gray-800" : "bg-white"}`}></div>
+              <div
+                className="w-full h-0.5"
+                style={{ backgroundColor: isHomepage ? "#7c3aed" : "white" }}
+              ></div>
+              <div
+                className="w-full h-0.5"
+                style={{ backgroundColor: isHomepage ? "#7c3aed" : "white" }}
+              ></div>
+              <div
+                className="w-full h-0.5"
+                style={{ backgroundColor: isHomepage ? "#7c3aed" : "white" }}
+              ></div>
             </div>
           </button>
 
           {!isHomepage && (
-            <button
-              onClick={() => navigate("/")}
-              className="text-xl font-bold hover:text-blue-200 transition-colors"
-            >
-              MyAI GO
+            <button onClick={() => navigate("/")} className="hover:opacity-80 transition-opacity">
+              <MyAILogo />
             </button>
           )}
         </div>
@@ -74,8 +83,8 @@ export default function Layout({ children }: LayoutProps) {
             onClick={handleLogout}
             className={`px-3 py-1 rounded text-sm transition-colors ${
               isHomepage
-                ? "bg-gray-600 hover:bg-gray-700 text-white"
-                : "bg-blue-700 hover:bg-blue-800"
+                ? "bg-purple-600 hover:bg-purple-700 text-white"
+                : "bg-purple-700 hover:bg-purple-800"
             }`}
           >
             Logout
@@ -94,12 +103,12 @@ export default function Layout({ children }: LayoutProps) {
 
             {/* Sidebar */}
             <div className="fixed top-0 left-0 h-full w-64 bg-white shadow-lg z-50">
-              <div className="p-4 border-b bg-blue-600 text-white">
+              <div className="p-4 border-b bg-purple-600 text-white">
                 <div className="flex items-center justify-between">
                   <h2 className="text-xl font-bold">Menu</h2>
                   <button
                     onClick={() => setIsSidebarOpen(false)}
-                    className="text-white hover:bg-blue-700 p-2 rounded"
+                    className="text-white hover:bg-purple-700 p-2 rounded"
                   >
                     ✕
                   </button>
@@ -112,11 +121,11 @@ export default function Layout({ children }: LayoutProps) {
                     <li key={item.to}>
                       <button
                         onClick={() => handleMenuItemClick(item.to)}
-                        className="group relative flex items-center justify-between rounded-lg px-3 py-2 text-sm w-full text-left hover:bg-gray-100"
+                        className="group relative flex items-center justify-between rounded-lg px-3 py-2 text-sm w-full text-left hover:bg-purple-50 text-purple-700"
                       >
                         <span>{item.label}</span>
                         <span className="pointer-events-none opacity-0 transition group-hover:opacity-100">
-                          <span className="rounded-md bg-gray-800 px-2 py-1 text-xs font-semibold text-white">
+                          <span className="rounded-md bg-purple-600 px-2 py-1 text-xs font-semibold text-white">
                             GO
                           </span>
                         </span>
@@ -126,13 +135,13 @@ export default function Layout({ children }: LayoutProps) {
                 </ul>
 
                 {/* Home Button at bottom of sidebar */}
-                <div className="border-t pt-2 mt-2">
+                <div className="border-t border-purple-200 pt-2 mt-2">
                   <button
                     onClick={() => {
                       navigate("/");
                       setIsSidebarOpen(false);
                     }}
-                    className="group relative flex items-center justify-between rounded-lg px-3 py-2 text-sm w-full text-left hover:bg-gray-100"
+                    className="group relative flex items-center justify-between rounded-lg px-3 py-2 text-sm w-full text-left hover:bg-purple-50 text-purple-700"
                   >
                     <span className="flex items-center gap-2">
                       <svg
@@ -151,7 +160,7 @@ export default function Layout({ children }: LayoutProps) {
                       Home
                     </span>
                     <span className="pointer-events-none opacity-0 transition group-hover:opacity-100">
-                      <span className="rounded-md bg-gray-800 px-2 py-1 text-xs font-semibold text-white">
+                      <span className="rounded-md bg-purple-600 px-2 py-1 text-xs font-semibold text-white">
                         GO
                       </span>
                     </span>

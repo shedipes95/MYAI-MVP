@@ -51,7 +51,7 @@ export default function ForgotPassword() {
 
   if (emailSent) {
     return (
-      <div className="min-h-screen flex items-center justify-center p-4 bg-gray-50">
+      <div className="min-h-screen flex items-center justify-center p-4 bg-purple-50">
         <div className="w-full max-w-md">
           <Card className="w-full shadow-lg text-center">
             <div className="mb-6">
@@ -70,19 +70,19 @@ export default function ForgotPassword() {
                   />
                 </svg>
               </div>
-              <h2 className="text-2xl font-semibold text-gray-800 mb-2">Check Your Email</h2>
-              <p className="text-sm text-gray-600">We've sent password reset instructions to</p>
-              <p className="text-sm font-medium text-gray-800 mt-1">{email}</p>
+              <h2 className="text-2xl font-semibold text-purple-900 mb-2">Check Your Email</h2>
+              <p className="text-sm text-purple-700">We've sent password reset instructions to</p>
+              <p className="text-sm font-medium text-purple-800 mt-1">{email}</p>
             </div>
 
-            <div className="text-sm text-gray-600 mb-6">
+            <div className="text-sm text-purple-600 mb-6">
               <p>Didn't receive the email? Check your spam folder or</p>
               <button
                 onClick={() => {
                   setEmailSent(false);
                   setEmail("");
                 }}
-                className="font-medium text-blue-600 hover:text-blue-500 transition-colors"
+                className="font-medium text-purple-600 hover:text-purple-500 transition-colors"
               >
                 try a different email address
               </button>
@@ -100,12 +100,12 @@ export default function ForgotPassword() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-4 bg-gray-50">
+    <div className="min-h-screen flex items-center justify-center p-4 bg-purple-50">
       <div className="w-full max-w-md">
         <Card className="w-full shadow-lg">
           <div className="text-center mb-6">
-            <h2 className="text-2xl font-semibold text-gray-800">Reset Password</h2>
-            <p className="text-sm text-gray-600 mt-2">
+            <h2 className="text-2xl font-semibold text-purple-900">Reset Password</h2>
+            <p className="text-sm text-purple-700 mt-2">
               Enter your email address and we'll send you instructions to reset your password
             </p>
           </div>
@@ -118,13 +118,15 @@ export default function ForgotPassword() {
 
           <form onSubmit={onSubmit} className="space-y-4">
             <div>
-              <label className="mb-2 block text-sm font-medium text-gray-700">Email Address</label>
+              <label className="mb-2 block text-sm font-medium text-purple-700">
+                Email Address
+              </label>
               <input
                 type="email"
-                className={`w-full rounded-lg border px-4 py-3 text-sm outline-none transition-colors ${
+                className={`w-full rounded-lg border px-4 py-3 text-sm outline-none transition-colors text-purple-900 ${
                   emailError
                     ? "border-red-300 focus:border-red-500 focus:ring-2 focus:ring-red-500/20"
-                    : "border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20"
+                    : "border-purple-300 focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20"
                 }`}
                 placeholder="john@example.com"
                 value={email}
@@ -143,7 +145,7 @@ export default function ForgotPassword() {
           <div className="mt-6 text-center">
             <Link
               to="/login"
-              className="text-sm font-medium text-blue-600 hover:text-blue-500 transition-colors"
+              className="text-sm font-medium text-purple-600 hover:text-purple-500 transition-colors"
             >
               ← Back to Sign In
             </Link>

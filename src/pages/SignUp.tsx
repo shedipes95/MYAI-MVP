@@ -83,12 +83,12 @@ export default function SignUp() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-4 bg-gray-50">
+    <div className="min-h-screen flex items-center justify-center p-4 bg-purple-50">
       <div className="w-full max-w-md">
         <Card className="w-full shadow-lg">
           <div className="text-center mb-6">
-            <h2 className="text-2xl font-semibold text-gray-800">Create Account</h2>
-            <p className="text-sm text-gray-600 mt-2">Join MyAI to manage your finances</p>
+            <h2 className="text-2xl font-semibold text-purple-900">Create Account</h2>
+            <p className="text-sm text-purple-700 mt-2">Join MyAI to manage your finances</p>
           </div>
 
           {authError && (
@@ -100,13 +100,13 @@ export default function SignUp() {
           <form onSubmit={onSubmit} className="space-y-4">
             <div className="grid grid-cols-2 gap-4">
               <div>
-                <label className="mb-2 block text-sm font-medium text-gray-700">First Name</label>
+                <label className="mb-2 block text-sm font-medium text-purple-700">First Name</label>
                 <input
                   type="text"
-                  className={`w-full rounded-lg border px-4 py-3 text-sm outline-none transition-colors ${
+                  className={`w-full rounded-lg border px-4 py-3 text-sm outline-none transition-colors text-purple-900 ${
                     fieldErrors.firstName
                       ? "border-red-300 focus:border-red-500 focus:ring-2 focus:ring-red-500/20"
-                      : "border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20"
+                      : "border-purple-300 focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20"
                   }`}
                   placeholder="John"
                   value={formData.firstName}
@@ -120,13 +120,13 @@ export default function SignUp() {
               </div>
 
               <div>
-                <label className="mb-2 block text-sm font-medium text-gray-700">Last Name</label>
+                <label className="mb-2 block text-sm font-medium text-purple-700">Last Name</label>
                 <input
                   type="text"
-                  className={`w-full rounded-lg border px-4 py-3 text-sm outline-none transition-colors ${
+                  className={`w-full rounded-lg border px-4 py-3 text-sm outline-none transition-colors text-purple-900 ${
                     fieldErrors.lastName
                       ? "border-red-300 focus:border-red-500 focus:ring-2 focus:ring-red-500/20"
-                      : "border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20"
+                      : "border-purple-300 focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20"
                   }`}
                   placeholder="Doe"
                   value={formData.lastName}
@@ -140,13 +140,15 @@ export default function SignUp() {
             </div>
 
             <div>
-              <label className="mb-2 block text-sm font-medium text-gray-700">Email Address</label>
+              <label className="mb-2 block text-sm font-medium text-purple-700">
+                Email Address
+              </label>
               <input
                 type="email"
-                className={`w-full rounded-lg border px-4 py-3 text-sm outline-none transition-colors ${
+                className={`w-full rounded-lg border px-4 py-3 text-sm outline-none transition-colors text-purple-900 ${
                   fieldErrors.email
                     ? "border-red-300 focus:border-red-500 focus:ring-2 focus:ring-red-500/20"
-                    : "border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20"
+                    : "border-purple-300 focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20"
                 }`}
                 placeholder="john@example.com"
                 value={formData.email}
@@ -159,13 +161,13 @@ export default function SignUp() {
             </div>
 
             <div>
-              <label className="mb-2 block text-sm font-medium text-gray-700">Password</label>
+              <label className="mb-2 block text-sm font-medium text-purple-700">Password</label>
               <input
                 type="password"
-                className={`w-full rounded-lg border px-4 py-3 text-sm outline-none transition-colors ${
+                className={`w-full rounded-lg border px-4 py-3 text-sm outline-none transition-colors text-purple-900 ${
                   fieldErrors.password
                     ? "border-red-300 focus:border-red-500 focus:ring-2 focus:ring-red-500/20"
-                    : "border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20"
+                    : "border-purple-300 focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20"
                 }`}
                 placeholder="••••••••"
                 value={formData.password}
@@ -178,15 +180,15 @@ export default function SignUp() {
             </div>
 
             <div>
-              <label className="mb-2 block text-sm font-medium text-gray-700">
+              <label className="mb-2 block text-sm font-medium text-purple-700">
                 Confirm Password
               </label>
               <input
                 type="password"
-                className={`w-full rounded-lg border px-4 py-3 text-sm outline-none transition-colors ${
+                className={`w-full rounded-lg border px-4 py-3 text-sm outline-none transition-colors text-purple-900 ${
                   fieldErrors.confirmPassword
                     ? "border-red-300 focus:border-red-500 focus:ring-2 focus:ring-red-500/20"
-                    : "border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20"
+                    : "border-purple-300 focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20"
                 }`}
                 placeholder="••••••••"
                 value={formData.confirmPassword}
@@ -204,11 +206,11 @@ export default function SignUp() {
           </form>
 
           <div className="mt-6 text-center">
-            <p className="text-sm text-gray-600">
+            <p className="text-sm text-purple-600">
               Already have an account?{" "}
               <Link
                 to="/login"
-                className="font-medium text-blue-600 hover:text-blue-500 transition-colors"
+                className="font-medium text-purple-600 hover:text-purple-500 transition-colors"
               >
                 Sign in
               </Link>
