@@ -19,8 +19,12 @@ export default function Topbar() {
         <span className="hidden sm:inline"></span>
         {user && (
           <>
-            <span className="text-gray-700">{user.email}</span>
-            <Button variant="ghost" onClick={onLogout}>Log out</Button>
+            <span className="text-gray-700">
+              {user.firstName} {user.lastName}
+            </span>
+            <Button variant="ghost" onClick={onLogout}>
+              Log out
+            </Button>
           </>
         )}
       </div>

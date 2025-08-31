@@ -9,6 +9,8 @@ import Loans from "@/pages/Loans";
 import Insurance from "@/pages/Insurance";
 import Ingest from "@/pages/Ingest";
 import Login from "@/pages/Login";
+import SignUp from "@/pages/SignUp";
+import ForgotPassword from "@/pages/ForgotPassword";
 import { useAppStore } from "@/store/useAppStore";
 
 function PrivateRoute({ children }: { children: React.ReactNode }) {
@@ -19,13 +21,15 @@ function PrivateRoute({ children }: { children: React.ReactNode }) {
 
 export default function App() {
   const location = useLocation();
-  const isLoginPage = location.pathname === "/login";
+  const isAuthPage = ["/login", "/signup", "/forgot-password"].includes(location.pathname);
 
-  // If it's the login page, render it without the main layout
-  if (isLoginPage) {
+  // If it's an auth page, render it without the main layout
+  if (isAuthPage) {
     return (
       <Routes>
         <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<SignUp />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
       </Routes>
     );
   }

@@ -24,6 +24,37 @@ export type ChatMessage = {
   ts: number;
 };
 
+// Authentication types
+export type User = {
+  id: string;
+  email: string;
+  firstName: string;
+  lastName: string;
+  createdAt: string;
+} | null;
+
+export type AuthError = {
+  message: string;
+  field?: string;
+};
+
+export type SignUpData = {
+  firstName: string;
+  lastName: string;
+  email: string;
+  password: string;
+  confirmPassword: string;
+};
+
+export type LoginData = {
+  email: string;
+  password: string;
+};
+
+export type ForgotPasswordData = {
+  email: string;
+};
+
 export type SavingsGoal = {
   id: string;
   name: string;
