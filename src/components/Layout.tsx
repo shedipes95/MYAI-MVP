@@ -125,7 +125,7 @@ export default function Layout({ children }: LayoutProps) {
                       >
                         <span>{item.label}</span>
                         <span className="pointer-events-none opacity-0 transition group-hover:opacity-100">
-                          <span className="rounded-md bg-purple-600 px-2 py-1 text-xs font-semibold text-white">
+                          <span className="rounded-md bg-gradient-to-r from-blue-500 via-purple-600 to-pink-500 px-2 py-1 text-xs font-semibold text-white shadow-lg">
                             GO
                           </span>
                         </span>

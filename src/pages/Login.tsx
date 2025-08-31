@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import Card from "@/components/Card";
 import Button from "@/components/Button";
 import { useAppStore } from "@/store/useAppStore";
+import MyAILogo from "@/components/MyAILogo";
 import type { LoginData } from "@/types";
 
 export default function Login() {
@@ -65,7 +66,12 @@ export default function Login() {
       <div className="w-full max-w-sm">
         <Card className="w-full shadow-lg">
           <div className="text-center mb-6">
-            <h2 className="text-2xl font-semibold text-purple-900">Welcome Back</h2>
+            <div className="mb-4 flex justify-center">
+              <MyAILogo showGO={true} />
+            </div>
+            <h2 className="text-2xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-pink-500">
+              Welcome Back
+            </h2>
             <p className="text-sm text-purple-700 mt-2">Sign in to your MyAI account</p>
           </div>
 
@@ -125,9 +131,13 @@ export default function Login() {
               )}
             </div>
 
-            <Button type="submit" className="w-full mt-6" disabled={authLoading}>
+            <button
+              type="submit"
+              disabled={authLoading}
+              className="w-full mt-6 px-6 py-3 bg-gradient-to-r from-blue-500 via-purple-600 to-pink-500 hover:from-blue-600 hover:via-purple-700 hover:to-pink-600 disabled:from-gray-300 disabled:via-gray-300 disabled:to-gray-300 text-white font-semibold rounded-lg transition-all shadow-lg disabled:cursor-not-allowed"
+            >
               {authLoading ? "Signing In..." : "Sign In"}
-            </Button>
+            </button>
           </form>
 
           <div className="mt-6 text-center">
@@ -135,7 +145,7 @@ export default function Login() {
               Don't have an account?{" "}
               <Link
                 to="/signup"
-                className="font-medium text-purple-600 hover:text-purple-500 transition-colors"
+                className="font-medium bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-pink-500 hover:from-blue-700 hover:to-pink-600 transition-all"
               >
                 Create one
               </Link>
