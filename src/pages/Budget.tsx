@@ -11,8 +11,7 @@ export default function Budget() {
     if (!budget) fetchBudget();
   }, [budget, fetchBudget]);
 
-  const totalPct =
-    budget && budget.totalLimit > 0 ? budget.totalSpent / budget.totalLimit : 0;
+  const totalPct = budget && budget.totalLimit > 0 ? budget.totalSpent / budget.totalLimit : 0;
 
   return (
     <div className="space-y-4">
@@ -25,9 +24,7 @@ export default function Budget() {
               <div className="text-sm text-gray-600">
                 {eur(budget.totalSpent)} / {eur(budget.totalLimit)}
               </div>
-              <div className="text-sm text-gray-600">
-                {Math.round((totalPct || 0) * 100)}%
-              </div>
+              <div className="text-sm text-gray-600">{Math.round((totalPct || 0) * 100)}%</div>
             </div>
             <ProgressBar value={totalPct} />
 
@@ -35,10 +32,7 @@ export default function Budget() {
               {budget.categories.map((c) => {
                 const v = c.limit > 0 ? c.spent / c.limit : 0;
                 return (
-                  <div
-                    key={c.name}
-                    className="grid grid-cols-5 items-center gap-2 text-sm"
-                  >
+                  <div key={c.name} className="grid grid-cols-5 items-center gap-2 text-sm">
                     <div className="col-span-2 font-medium">{c.name}</div>
                     <div className="col-span-2 text-gray-600">
                       {eur(c.spent)} / {eur(c.limit)}

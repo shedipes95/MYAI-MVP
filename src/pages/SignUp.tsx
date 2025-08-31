@@ -21,7 +21,7 @@ export default function SignUp() {
 
   useEffect(() => {
     if (user) {
-      navigate("/budget", { replace: true });
+      navigate("/", { replace: true });
     }
   }, [user, navigate]);
 

@@ -4,12 +4,10 @@ type Item = { label: string; to: string };
 const main: Item[] = [
   { label: "Budget", to: "/budget" },
   { label: "Accounts", to: "/accounts" },
-  { label: "MyAI Chat", to: "/chat" },
   { label: "Save", to: "/save" },
   { label: "Loans", to: "/loans" },
   { label: "Insurance", to: "/insurance" },
 ];
-const extra: Item[] = [{ label: "Upload CSV", to: "/ingest" }];
 
 function ItemLink({ it }: { it: Item }) {
   return (
@@ -36,9 +34,13 @@ export default function Sidebar() {
   return (
     <aside className="w-60 shrink-0 border-r bg-white">
       <nav className="p-2">
-        <ul className="space-y-1">{main.map((i) => <li key={i.to}><ItemLink it={i} /></li>)}</ul>
-        <div className="my-3 h-px bg-gray-200" />
-        <ul className="space-y-1">{extra.map((i) => <li key={i.to}><ItemLink it={i} /></li>)}</ul>
+        <ul className="space-y-1">
+          {main.map((i) => (
+            <li key={i.to}>
+              <ItemLink it={i} />
+            </li>
+          ))}
+        </ul>
       </nav>
     </aside>
   );

@@ -1,10 +1,4 @@
-import type {
-  Account,
-  BudgetData,
-  InsuranceProduct,
-  Loan,
-  SavingsGoal,
-} from "@/types";
+import type { Account, BudgetData, InsuranceProduct, Loan, SavingsGoal } from "@/types";
 
 /**
  * Global API client with mock data.

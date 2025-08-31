@@ -3,6 +3,7 @@ import Card from "@/components/Card";
 import Button from "@/components/Button";
 import DropZone from "@/components/DropZone";
 import StatusAlert from "@/components/StatusAlert";
+import HomeButton from "@/components/HomeButton";
 import { parseCSV, Row } from "@/utils/csv";
 import { downloadCSV, timestampFilename } from "@/utils/download";
 
@@ -375,6 +376,9 @@ export default function Ingest() {
           )}
         </div>
       </Card>
+
+      {/* Home Button */}
+      <HomeButton />
     </div>
   );
 }

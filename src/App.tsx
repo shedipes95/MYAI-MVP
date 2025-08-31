@@ -1,6 +1,6 @@
 import { Navigate, Route, Routes, useLocation } from "react-router-dom";
-import Sidebar from "@/components/Sidebar";
-import Topbar from "@/components/Topbar";
+import Layout from "@/components/Layout";
+import ChatbotHomepage from "@/pages/ChatbotHomepage";
 import Budget from "@/pages/Budget";
 import Accounts from "@/pages/Accounts";
 import Chat from "@/pages/Chat";
@@ -23,7 +23,7 @@ export default function App() {
   const location = useLocation();
   const isAuthPage = ["/login", "/signup", "/forgot-password"].includes(location.pathname);
 
-  // If it's an auth page, render it without the main layout
+  // If it's an auth page, render it without any layout
   if (isAuthPage) {
     return (
       <Routes>
@@ -34,89 +34,89 @@ export default function App() {
     );
   }
 
-  // For all other routes, render with the main layout
+  // For all other routes, render with the standard layout (topbar + hidden sidebar)
   return (
-    <div className="h-screen flex flex-col">
-      <Topbar />
-      <div className="flex flex-1 overflow-hidden">
-        <Sidebar />
-        <main className="flex-1 overflow-auto p-4">
-          <Routes>
-            {/* Default page after login */}
-            <Route
-              path="/"
-              element={
-                <PrivateRoute>
-                  <Navigate to="/budget" replace />
-                </PrivateRoute>
-              }
-            />
+    <Layout>
+      <Routes>
+        {/* Homepage - ChatBot */}
+        <Route
+          path="/"
+          element={
+            <PrivateRoute>
+              <ChatbotHomepage />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/home"
+          element={
+            <PrivateRoute>
+              <ChatbotHomepage />
+            </PrivateRoute>
+          }
+        />
 
-            {/* Main pages */}
-            <Route
-              path="/budget"
-              element={
-                <PrivateRoute>
-                  <Budget />
-                </PrivateRoute>
-              }
-            />
-            <Route
-              path="/accounts"
-              element={
-                <PrivateRoute>
-                  <Accounts />
-                </PrivateRoute>
-              }
-            />
-            <Route
-              path="/chat"
-              element={
-                <PrivateRoute>
-                  <Chat />
-                </PrivateRoute>
-              }
-            />
-            <Route
-              path="/save"
-              element={
-                <PrivateRoute>
-                  <Save />
-                </PrivateRoute>
-              }
-            />
-            <Route
-              path="/loans"
-              element={
-                <PrivateRoute>
-                  <Loans />
-                </PrivateRoute>
-              }
-            />
-            <Route
-              path="/insurance"
-              element={
-                <PrivateRoute>
-                  <Insurance />
-                </PrivateRoute>
-              }
-            />
+        {/* Feature Pages */}
+        <Route
+          path="/budget"
+          element={
+            <PrivateRoute>
+              <Budget />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/accounts"
+          element={
+            <PrivateRoute>
+              <Accounts />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/save"
+          element={
+            <PrivateRoute>
+              <Save />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/loans"
+          element={
+            <PrivateRoute>
+              <Loans />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/insurance"
+          element={
+            <PrivateRoute>
+              <Insurance />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/chat"
+          element={
+            <PrivateRoute>
+              <Chat />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/ingest"
+          element={
+            <PrivateRoute>
+              <Ingest />
+            </PrivateRoute>
+          }
+        />
 
-            {/* Upload CSV page */}
-            <Route
-              path="/ingest"
-              element={
-                <PrivateRoute>
-                  <Ingest />
-                </PrivateRoute>
-              }
-            />
-
-            {/* Any other route → redirect */}
-            <Route path="*" element={<Navigate to="/budget" replace />} />
-          </Routes>
-        </main>
-      </div>
-    </div>
+        {/* Any other route → redirect to home */}
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
+    </Layout>
   );
 }
