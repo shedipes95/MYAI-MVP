@@ -11,31 +11,61 @@ export default function Accounts() {
   }, [accounts.length, fetchAccounts]);
 
   return (
-    <div className="space-y-4">
-      <h2 className="text-xl font-semibold text-purple-900">Accounts</h2>
-      <Card>
-        {accountsLoading && <div className="text-sm text-purple-500">Loading accounts…</div>}
-        {!accountsLoading && (
-          <table className="w-full text-sm">
-            <thead>
-              <tr className="text-left text-purple-600">
-                <th className="py-2">Name</th>
-                <th className="py-2">Last 4</th>
-                <th className="py-2 text-right">Balance</th>
-              </tr>
-            </thead>
-            <tbody>
-              {accounts.map((a) => (
-                <tr key={a.id} className="border-t border-purple-200">
-                  <td className="py-2 text-purple-800">{a.name}</td>
-                  <td className="py-2 text-purple-600">{a.last4}</td>
-                  <td className="py-2 text-right font-medium text-purple-800">{eur(a.balance)}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        )}
-      </Card>
+    <div className="min-h-screen bg-slate-50 p-6">
+      <div className="max-w-6xl mx-auto space-y-6">
+        <div className="flex items-center justify-between">
+          <h1 className="text-3xl font-bold text-slate-900">Account Overview</h1>
+          <div className="text-sm text-slate-600">
+            Last updated •{" "}
+            {new Date().toLocaleDateString("en-US", {
+              weekday: "long",
+              year: "numeric",
+              month: "long",
+              day: "numeric",
+            })}
+          </div>
+        </div>
+
+        <Card className="gradient-card shadow-lg border-0">
+          {accountsLoading && (
+            <div className="flex items-center justify-center py-8">
+              <div className="text-blue-600 flex items-center gap-2">
+                <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-blue-600"></div>
+                Loading account data…
+              </div>
+            </div>
+          )}
+          {!accountsLoading && (
+            <div className="space-y-4">
+              <h2 className="text-xl font-semibold text-slate-800 mb-6">Your Accounts</h2>
+              <div className="grid gap-4">
+                {accounts.map((a) => (
+                  <div
+                    key={a.id}
+                    className="bg-white rounded-lg p-6 border border-slate-200 shadow-sm hover:shadow-md transition-shadow"
+                  >
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-4">
+                        <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center text-white font-bold text-lg">
+                          🏦
+                        </div>
+                        <div>
+                          <h3 className="font-semibold text-slate-800 text-lg">{a.name}</h3>
+                          <p className="text-slate-600 text-sm">Account ending in {a.last4}</p>
+                        </div>
+                      </div>
+                      <div className="text-right">
+                        <div className="text-2xl font-bold text-slate-900">{eur(a.balance)}</div>
+                        <div className="text-sm text-slate-600">Available Balance</div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+        </Card>
+      </div>
     </div>
   );
 }

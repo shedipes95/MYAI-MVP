@@ -1,0 +1,102 @@
+{
+  "success": true,
+  "message": "Car insurance quotes retrieved successfully",
+  "quotes": [
+    {
+      "provider": "Aviva Ireland",
+      "company": "Aviva Ireland",
+      "price": 756.0,
+      "excess": 400.0,
+      "cover_summary": "Comprehensive car insurance with breakdown cover and windscreen protection",
+      "features": [
+        "24/7 breakdown assistance",
+        "Windscreen cover included",
+        "EU driving cover",
+        "Courtesy car provision",
+        "Personal accident cover"
+      ],
+      "coverage_type": "Comprehensive"
+    },
+    {
+      "provider": "Zurich Insurance",
+      "company": "Zurich Insurance",
+      "price": 823.0,
+      "excess": 350.0,
+      "cover_summary": "Premium comprehensive car insurance with enhanced benefits and no claims protection",
+      "features": [
+        "Protected no claims bonus",
+        "Enhanced breakdown cover",
+        "Key replacement",
+        "Personal belongings cover",
+        "Legal expenses included"
+      ],
+      "coverage_type": "Comprehensive"
+    },
+    {
+      "provider": "AXA Insurance",
+      "company": "AXA Insurance",
+      "price": 689.0,
+      "excess": 500.0,
+      "cover_summary": "Comprehensive car insurance with competitive rates and essential coverage",
+      "features": [
+        "Comprehensive coverage",
+        "Third party liability",
+        "Fire and theft protection",
+        "Medical expenses",
+        "Roadside assistance"
+      ],
+      "coverage_type": "Comprehensive"
+    },
+    {
+      "provider": "Irish Life Insurance",
+      "company": "Irish Life Insurance",
+      "price": 712.0,
+      "excess": 300.0,
+      "cover_summary": "Complete car insurance package with Irish customer service and local support",
+      "features": [
+        "Irish customer service",
+        "Local claims handling",
+        "Comprehensive coverage",
+        "Breakdown assistance",
+        "Multi-car discounts"
+      ],
+      "coverage_type": "Comprehensive"
+    },
+    {
+      "provider": "FBD Insurance",
+      "company": "FBD Insurance",
+      "price": 798.0,
+      "excess": 450.0,
+      "cover_summary": "Trusted Irish car insurance with comprehensive protection and loyalty benefits",
+      "features": [
+        "Loyalty discounts",
+        "Irish owned and operated",
+        "24/7 claims line",
+        "Comprehensive protection",
+        "Farm and motor discounts"
+      ],
+      "coverage_type": "Comprehensive"
+    },
+    {
+      "provider": "Liberty Insurance",
+      "company": "Liberty Insurance",
+      "price": 734.0,
+      "excess": 400.0,
+      "cover_summary": "Flexible car insurance with customizable cover options and competitive pricing",
+      "features": [
+        "Flexible cover options",
+        "Online policy management",
+        "Competitive pricing",
+        "Quick claims process",
+        "EU travel cover"
+      ],
+      "coverage_type": "Comprehensive"
+    }
+  ],
+  "metadata": {
+    "search_date": "2024-09-04",
+    "vehicle_type": "Toyota Corolla 2019",
+    "coverage_type": "Comprehensive",
+    "quotes_count": 6
+  }
+}

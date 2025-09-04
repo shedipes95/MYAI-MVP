@@ -34,13 +34,13 @@ export default function Layout({ children }: LayoutProps) {
   };
 
   return (
-    <div className="h-screen flex flex-col">
+    <div className="h-screen flex flex-col bg-slate-50">
       {/* Top Bar */}
       <header
         className={`p-4 flex items-center justify-between ${
           isHomepage
-            ? "bg-purple-50 text-purple-800 border-none"
-            : "bg-purple-600 text-white shadow-lg"
+            ? "bg-slate-50 text-slate-800 border-none"
+            : "gradient-primary text-white shadow-xl border-b border-blue-600"
         }`}
         style={isHomepage ? { boxShadow: "none", borderBottom: "none" } : {}}
       >
@@ -53,15 +53,15 @@ export default function Layout({ children }: LayoutProps) {
             <div className="w-6 h-6 flex flex-col justify-center space-y-1">
               <div
                 className="w-full h-0.5"
-                style={{ backgroundColor: isHomepage ? "#7c3aed" : "white" }}
+                style={{ backgroundColor: isHomepage ? "#1e40af" : "white" }}
               ></div>
               <div
                 className="w-full h-0.5"
-                style={{ backgroundColor: isHomepage ? "#7c3aed" : "white" }}
+                style={{ backgroundColor: isHomepage ? "#1e40af" : "white" }}
               ></div>
               <div
                 className="w-full h-0.5"
-                style={{ backgroundColor: isHomepage ? "#7c3aed" : "white" }}
+                style={{ backgroundColor: isHomepage ? "#1e40af" : "white" }}
               ></div>
             </div>
           </button>
@@ -81,10 +81,10 @@ export default function Layout({ children }: LayoutProps) {
           )}
           <button
             onClick={handleLogout}
-            className={`px-3 py-1 rounded text-sm transition-colors ${
+            className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 shadow-md hover:shadow-lg ${
               isHomepage
-                ? "bg-purple-600 hover:bg-purple-700 text-white"
-                : "bg-purple-700 hover:bg-purple-800"
+                ? "bg-blue-600 hover:bg-blue-700 text-white"
+                : "bg-blue-500 hover:bg-blue-400"
             }`}
           >
             Logout
@@ -102,13 +102,13 @@ export default function Layout({ children }: LayoutProps) {
             />
 
             {/* Sidebar */}
-            <div className="fixed top-0 left-0 h-full w-64 bg-white shadow-lg z-50">
-              <div className="p-4 border-b bg-purple-600 text-white">
+            <div className="fixed top-0 left-0 h-full w-64 bg-white shadow-2xl z-50 border-r border-slate-200">
+              <div className="p-4 border-b gradient-primary text-white">
                 <div className="flex items-center justify-between">
                   <h2 className="text-xl font-bold">Menu</h2>
                   <button
                     onClick={() => setIsSidebarOpen(false)}
-                    className="text-white hover:bg-purple-700 p-2 rounded"
+                    className="text-white hover:bg-blue-700 p-2 rounded-lg transition-colors"
                   >
                     ✕
                   </button>
@@ -121,11 +121,11 @@ export default function Layout({ children }: LayoutProps) {
                     <li key={item.to}>
                       <button
                         onClick={() => handleMenuItemClick(item.to)}
-                        className="group relative flex items-center justify-between rounded-lg px-3 py-2 text-sm w-full text-left hover:bg-purple-50 text-purple-700"
+                        className="group relative flex items-center justify-between rounded-lg px-3 py-3 text-sm w-full text-left hover:bg-blue-50 text-slate-700 transition-all duration-200"
                       >
                         <span>{item.label}</span>
                         <span className="pointer-events-none opacity-0 transition group-hover:opacity-100">
-                          <span className="rounded-md bg-gradient-to-r from-blue-500 via-purple-600 to-pink-500 px-2 py-1 text-xs font-semibold text-white shadow-lg">
+                          <span className="rounded-md bg-blue-600 px-2 py-1 text-xs font-semibold text-white shadow-lg">
                             GO
                           </span>
                         </span>
@@ -135,13 +135,13 @@ export default function Layout({ children }: LayoutProps) {
                 </ul>
 
                 {/* Home Button at bottom of sidebar */}
-                <div className="border-t border-purple-200 pt-2 mt-2">
+                <div className="border-t border-slate-200 pt-2 mt-2">
                   <button
                     onClick={() => {
                       navigate("/");
                       setIsSidebarOpen(false);
                     }}
-                    className="group relative flex items-center justify-between rounded-lg px-3 py-2 text-sm w-full text-left hover:bg-purple-50 text-purple-700"
+                    className="group relative flex items-center justify-between rounded-lg px-3 py-3 text-sm w-full text-left hover:bg-blue-50 text-slate-700 transition-all duration-200"
                   >
                     <span className="flex items-center gap-2">
                       <svg
@@ -160,7 +160,7 @@ export default function Layout({ children }: LayoutProps) {
                       Home
                     </span>
                     <span className="pointer-events-none opacity-0 transition group-hover:opacity-100">
-                      <span className="rounded-md bg-purple-600 px-2 py-1 text-xs font-semibold text-white">
+                      <span className="rounded-md bg-blue-600 px-2 py-1 text-xs font-semibold text-white">
                         GO
                       </span>
                     </span>
@@ -172,7 +172,7 @@ export default function Layout({ children }: LayoutProps) {
         )}
 
         {/* Main Content */}
-        <main className="h-full overflow-auto">{children}</main>
+        <main className="h-full overflow-auto bg-slate-50">{children}</main>
       </div>
     </div>
   );

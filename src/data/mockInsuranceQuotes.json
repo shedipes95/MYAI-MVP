@@ -1,0 +1,52 @@
+{
+  "success": true,
+  "message": "Quotes retrieved successfully",
+  "quotes": [
+    {
+      "provider": "Irish Life Insurance",
+      "company": "Irish Life Insurance",
+      "price": 445.0,
+      "excess": 200.0,
+      "cover_summary": "Comprehensive home and contents insurance with worldwide personal possessions cover",
+      "features": ["24/7 Claims helpline", "No claims bonus protection", "Worldwide cover"]
+    },
+    {
+      "provider": "Aviva Ireland",
+      "company": "Aviva Ireland",
+      "price": 389.0,
+      "excess": 250.0,
+      "cover_summary": "Complete home insurance with optional extras and multi-policy discounts",
+      "features": ["Home emergency cover", "Legal expenses included", "Multi-policy discount"]
+    },
+    {
+      "provider": "Zurich Insurance",
+      "company": "Zurich Insurance",
+      "price": 512.0,
+      "excess": 150.0,
+      "cover_summary": "Premium home insurance with enhanced protection and personal liability cover",
+      "features": ["Enhanced protection", "Personal liability cover", "Home security discount"]
+    },
+    {
+      "provider": "AXA Insurance",
+      "company": "AXA Insurance",
+      "price": 423.0,
+      "excess": 300.0,
+      "cover_summary": "Standard home and contents cover with competitive rates and flexible payment options",
+      "features": ["Flexible payment options", "Online policy management", "Competitive rates"]
+    },
+    {
+      "provider": "FBD Insurance",
+      "company": "FBD Insurance",
+      "price": 467.0,
+      "excess": 175.0,
+      "cover_summary": "Local Irish insurer with comprehensive home protection and personal service",
+      "features": ["Local Irish service", "Comprehensive protection", "Personal claims service"]
+    }
+  ],
+  "metadata": {
+    "search_date": "2024-09-04",
+    "property_type": "Semi-detached house",
+    "location": "Dublin 8",
+    "quotes_count": 5
+  }
+}

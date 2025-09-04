@@ -12,27 +12,59 @@ export default function Save() {
   }, [savings.length, fetchSavings]);
 
   return (
-    <div className="space-y-4">
-      <h2 className="text-xl font-semibold text-purple-900">Save</h2>
-      <Card>
-        {savingsLoading && <div className="text-sm text-purple-500">Loading goals…</div>}
-        <div className="space-y-3">
-          {savings.map((g) => (
-            <div key={g.id} className="space-y-1">
-              <div className="flex items-center justify-between text-sm">
-                <div className="font-medium text-purple-800">{g.name}</div>
-                <div className="text-purple-600">
-                  Target: <span className="font-medium">{eur(g.target)}</span>
-                </div>
-              </div>
-              <ProgressBar value={g.progress} />
-              <div className="text-xs text-purple-500">
-                {Math.round(g.progress * 100)}% complete
+    <div className="min-h-screen bg-slate-50 p-6">
+      <div className="max-w-6xl mx-auto space-y-6">
+        <div className="flex items-center justify-between">
+          <h1 className="text-3xl font-bold text-slate-900">Savings Goals</h1>
+          <div className="text-sm text-slate-600">
+            Track your progress •{" "}
+            {new Date().toLocaleDateString("en-US", { month: "long", year: "numeric" })}
+          </div>
+        </div>
+
+        <Card className="gradient-card shadow-lg border-0">
+          {savingsLoading && (
+            <div className="flex items-center justify-center py-8">
+              <div className="text-blue-600 flex items-center gap-2">
+                <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-blue-600"></div>
+                Loading savings goals…
               </div>
             </div>
-          ))}
-        </div>
-      </Card>
+          )}
+          <div className="space-y-6">
+            <h2 className="text-xl font-semibold text-slate-800 mb-6">Your Savings Goals</h2>
+            <div className="grid gap-6">
+              {savings.map((g) => (
+                <div
+                  key={g.id}
+                  className="bg-white rounded-lg p-6 border border-slate-200 shadow-sm"
+                >
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center text-white font-bold">
+                        💰
+                      </div>
+                      <div>
+                        <h3 className="font-semibold text-slate-800 text-lg">{g.name}</h3>
+                        <p className="text-slate-600 text-sm">
+                          {Math.round(g.progress * 100)}% complete
+                        </p>
+                      </div>
+                    </div>
+                    <div className="text-right">
+                      <div className="text-lg font-bold text-slate-900">
+                        {eur(g.target * g.progress)} / {eur(g.target)}
+                      </div>
+                      <div className="text-sm text-slate-600">Target Amount</div>
+                    </div>
+                  </div>
+                  <ProgressBar value={g.progress} />
+                </div>
+              ))}
+            </div>
+          </div>
+        </Card>
+      </div>
     </div>
   );
 }

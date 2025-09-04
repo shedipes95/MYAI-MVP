@@ -2,7 +2,53 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Financial App Color Palette */
+:root {
+  --primary-blue: #1e40af; /* Primary blue */
+  --secondary-blue: #3b82f6; /* Lighter blue */
+  --accent-blue: #60a5fa; /* Accent blue */
+  --dark-gray: #1f2937; /* Dark text */
+  --medium-gray: #6b7280; /* Medium text */
+  --light-gray: #f8fafc; /* Light background */
+  --border-gray: #e5e7eb; /* Borders */
+  --success-green: #10b981; /* Success/positive */
+  --warning-orange: #f59e0b; /* Warning */
+  --error-red: #ef4444; /* Error/negative */
+  --white: #ffffff;
+}
+
+/* Custom financial app styling */
+.gradient-primary {
+  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+}
+
+.gradient-card {
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+}
+
+.text-primary {
+  color: var(--primary-blue);
+}
+
+.text-secondary {
+  color: var(--secondary-blue);
+}
+
+.bg-primary {
+  background-color: var(--primary-blue);
+}
+
+.bg-secondary {
+  background-color: var(--secondary-blue);
+}
+
+.border-primary {
+  border-color: var(--primary-blue);
+}
+
 /* Simple global tweaks */
-html, body, #root {
+html,
+body,
+#root {
   height: 100%;
 }

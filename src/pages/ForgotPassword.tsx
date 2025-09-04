@@ -89,7 +89,7 @@ export default function ForgotPassword() {
             </div>
 
             <Link to="/login" className="inline-block w-full">
-              <Button variant="outline" className="w-full">
+              <Button variant="ghost" className="w-full">
                 Back to Sign In
               </Button>
             </Link>

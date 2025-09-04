@@ -11,10 +11,10 @@ export default function Button({
   ...rest
 }: PropsWithChildren<Props>) {
   const base =
-    "inline-flex items-center justify-center rounded-lg px-3 py-2 text-sm font-medium transition";
+    "inline-flex items-center justify-center rounded-lg px-4 py-2 text-sm font-medium transition-all duration-200 shadow-md hover:shadow-lg";
   const variants = {
-    primary: "bg-purple-600 text-white hover:bg-purple-700 active:bg-purple-800",
-    ghost: "bg-transparent text-purple-700 hover:bg-purple-100",
+    primary: "bg-blue-600 text-white hover:bg-blue-700 active:bg-blue-800",
+    ghost: "bg-transparent text-slate-700 hover:bg-slate-100 shadow-none",
   } as const;
 
   return (

@@ -1,0 +1,27 @@
+Posted Account,Posted Transactions Date,Description1,Description2,Description3,Debit Amount,Credit Amount,Balance,Posted Currency,Transaction Type,Local Currency Amount,Local Currency,Categorisation
+937134 - 06645066,01/07/2025,CHD-EMPLOYER-PAYROLL,9655,,4500,5500,EUR,Credit,4500,EUR,Salary / Wages
+937134 - 06645066,02/07/2025,DD-AIB-MORTGAGE,9655,,1500,,EUR,Direct Debit,1500,EUR,Financial Products - Mortgage repayments
+937134 - 06645066,03/07/2025,DD-AXA-INSURANCE H,9655,100,,3900,EUR,Direct Debit,100,EUR,Financial Products - Insurance premiums health
+937134 - 06645066,03/07/2025,DD-AXA-INSURANCE C,9655,70,,3830,EUR,Direct Debit,70,EUR,Financial Products - Insurance premiums car
+937134 - 06645066,03/07/2025,DD-IRISH-LIFE PENSI,9655,150,,3680,EUR,Direct Debit,150,EUR,Financial Products - Pension contributions
+937134 - 06645066,04/07/2025,DD-ELECTRIC IRELAN,9655,90,,3590,EUR,Direct Debit,90,EUR,Utilities & Services - Electricity
+937134 - 06645066,06/07/2025,DD-BORD GAIS,9655,70,,3520,EUR,Direct Debit,70,EUR,Utilities & Services - Gas
+937134 - 06645066,06/07/2025,DD-UISCE EIREANN,9655,40,,3480,EUR,Direct Debit,40,EUR,Utilities & Services - Water
+937134 - 06645066,06/07/2025,DD-VIRGIN MEDIA,9655,60,,3420,EUR,Direct Debit,60,EUR,Utilities & Services - Internet / Broadband
+937134 - 06645066,07/07/2025,DD-VODAFONE MOBILE,9655,40,,3380,EUR,Direct Debit,40,EUR,Utilities & Services - Mobile phone bill
+937134 - 06645066,07/07/2025,DD-NETFLIX,9655,16,,3364,EUR,Direct Debit,16,EUR,Utilities & Services - Streaming - Netflix
+937134 - 06645066,07/07/2025,DD-SPOTIFY,9655,12,,3352,EUR,Direct Debit,12,EUR,Utilities & Services - Streaming - Spotify
+937134 - 06645066,07/07/2025,DD-AMAZON PRIME,9655,9,,3343,EUR,Direct Debit,9,EUR,Utilities & Services - Streaming - Amazon Prime Video
+937134 - 06645066,07/07/2025,DD-ICLOUD,9655,3,,3340,EUR,Direct Debit,3,EUR,Utilities & Services - Streaming - Dropbox / Google Drive / iCloud storage
+937134 - 06645066,08/07/2025,VDP-TESCO SUPERMARK,9655,120,,3220,EUR,Debit,120,EUR,Groceries / Supermarket
+937134 - 06645066,08/07/2025,VDP-LIDL SUPERMARKE,9655,80,,3140,EUR,Debit,80,EUR,Groceries / Supermarket
+937134 - 06645066,10/07/2025,VDP-CIRCLE K FUEL,9655,60,,3080,EUR,Debit,60,EUR,Fuel / Petrol station
+937134 - 06645066,11/07/2025,VDP-IRISH RAIL,9655,40,,3040,EUR,Debit,40,EUR,Travel / Public Transport / Taxi
+937134 - 06645066,11/07/2025,VDP-RESTAURANT MILA,9655,55,,2985,EUR,Debit,55,EUR,Restaurants / Cafes / Takeaway
+937134 - 06645066,13/07/2025,VDP-CINEMA OMNIPLEX,9655,25,,2960,EUR,Debit,25,EUR,Leisure / Entertainment (cinema, events, pubs)
+937134 - 06645066,15/07/2025,VDP-BOOTS PHARMACY,9655,30,,2930,EUR,Debit,30,EUR,Healthcare (doctor, dentist, pharmacy)
+937134 - 06645066,17/07/2025,VDP-CHARITY CONCERN,9655,20,,2910,EUR,Debit,20,EUR,Charity donations
+937134 - 06645066,20/07/2025,VDP-DUNNES STORES,9655,150,,2760,EUR,Debit,150,EUR,Groceries / Supermarket
+937134 - 06645066,23/07/2025,VDP-CAFE NERO,9655,12,,2748,EUR,Debit,12,EUR,Restaurants / Cafes / Takeaway
+937134 - 06645066,25/07/2025,VDP-PENNEYS CLOTHIN,9655,100,,2648,EUR,Debit,100,EUR,Education / Training payments
+937134 - 06645066,27/07/2025,VDP-BANK FEE,9655,6,,2642,EUR,Debit,6,EUR,Bank Charges / Fees (maintenance, overdraft, foreign exchange, ATM fees)
