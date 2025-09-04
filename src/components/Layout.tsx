@@ -16,6 +16,7 @@ export default function Layout({ children }: LayoutProps) {
   const isHomepage = location.pathname === "/" || location.pathname === "/home";
 
   const menuItems = [
+    { label: "Chat MyAI", to: "/", icon: "💬" },
     { label: "Budget", to: "/budget" },
     { label: "Accounts", to: "/accounts" },
     { label: "Save", to: "/save" },
@@ -117,21 +118,35 @@ export default function Layout({ children }: LayoutProps) {
 
               <nav className="p-2 flex flex-col h-full">
                 <ul className="space-y-1 flex-1">
-                  {menuItems.map((item) => (
-                    <li key={item.to}>
-                      <button
-                        onClick={() => handleMenuItemClick(item.to)}
-                        className="group relative flex items-center justify-between rounded-lg px-3 py-3 text-sm w-full text-left hover:bg-blue-50 text-slate-700 transition-all duration-200"
-                      >
-                        <span>{item.label}</span>
-                        <span className="pointer-events-none opacity-0 transition group-hover:opacity-100">
-                          <span className="rounded-md bg-blue-600 px-2 py-1 text-xs font-semibold text-white shadow-lg">
-                            GO
+                  {menuItems.map((item) => {
+                    const isActive = location.pathname === item.to || 
+                      (item.to === "/" && (location.pathname === "/" || location.pathname === "/home"));
+                    
+                    return (
+                      <li key={item.to}>
+                        <button
+                          onClick={() => handleMenuItemClick(item.to)}
+                          className={`group relative flex items-center justify-between rounded-lg px-3 py-3 text-sm w-full text-left transition-all duration-200 ${
+                            isActive 
+                              ? "bg-blue-100 text-blue-700 font-medium" 
+                              : "hover:bg-blue-50 text-slate-700"
+                          }`}
+                        >
+                          <div className="flex items-center gap-3">
+                            {item.icon && <span className="text-lg">{item.icon}</span>}
+                            <span>{item.label}</span>
+                          </div>
+                          <span className={`pointer-events-none transition ${
+                            isActive ? "opacity-100" : "opacity-0 group-hover:opacity-100"
+                          }`}>
+                            <span className="rounded-md bg-gradient-to-r from-blue-500 via-purple-600 to-pink-500 px-2 py-1 text-xs font-semibold text-white shadow-lg">
+                              GO
+                            </span>
                           </span>
-                        </span>
-                      </button>
-                    </li>
-                  ))}
+                        </button>
+                      </li>
+                    );
+                  })}
                 </ul>
 
                 {/* Home Button at bottom of sidebar */}
