@@ -65,7 +65,7 @@ export default function ChatbotHomepage() {
     {
       id: "spending",
       title: "Total Spending",
-      value: hasData ? `€${transactionKPIs?.totalSpent?.toFixed(2) || "0.00"}` : "€0.00",
+      value: hasData ? `€${transactionKPIs?.totalSpend?.toFixed(2) || "0.00"}` : "€0.00",
       icon: DollarSign,
       color: "from-red-500 to-red-600",
       bgColor: "bg-red-50",
@@ -84,7 +84,7 @@ export default function ChatbotHomepage() {
       id: "budget",
       title: "Budget Used",
       value: hasData
-        ? `${(((transactionKPIs?.totalSpent || 0) / (budget?.totalLimit || 1)) * 100).toFixed(0)}%`
+        ? `${(((transactionKPIs?.totalSpend || 0) / (budget?.totalLimit || 1)) * 100).toFixed(0)}%`
         : "0%",
       icon: Wallet,
       color: "from-green-500 to-green-600",
