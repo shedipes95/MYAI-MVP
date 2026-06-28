@@ -1,107 +1,79 @@
-# MyAI MVP
+# MyAI — Personal Finance Dashboard
 
-A modern React-based financial management application with AI-powered features.
+A single-page web app that turns a raw bank statement (CSV) into a clear picture of where your money goes, with budgets, savings goals, loans, insurance, and an AI assistant you can actually ask questions.
 
-## 🚀 Features
+## What it does
 
-- **User Authentication** - Secure login system with persistent sessions
-- **Budget Management** - Track and manage personal budgets
-- **Account Overview** - Monitor multiple financial accounts
-- **AI Chat Interface** - Interactive AI assistant for financial guidance
-- **Savings Tracker** - Set and monitor savings goals
-- **Loans Management** - Track loans and payment schedules
-- **Insurance Overview** - Manage insurance policies and coverage
-- **CSV Data Import** - Upload and process financial transaction data
-- **Semantic Matching** - AI-powered transaction categorization
+You upload a bank CSV, the app cleans it up and sorts each transaction into a spending category, and then it shows you the numbers in a way that's easy to read: total spend, your biggest category, a breakdown by category, and a chat assistant that answers questions about your own data ("how much did I spend on groceries?", "where can I cut back?").
 
-## 🛠️ Technology Stack
+The categorisation runs through a backend service, so messy real-world descriptions get grouped into sensible categories rather than left as raw text.
 
-- **Frontend**: React 18 with TypeScript
-- **Routing**: React Router DOM
-- **State Management**: Zustand
-- **Styling**: Tailwind CSS
-- **Build Tool**: Vite
-- **Linting**: ESLint with TypeScript support
-- **Code Formatting**: Prettier
+## Why I built it
 
-## 📦 Installation
+I'm a data analyst moving into data science, and I wanted a project that does the full loop end to end: take messy real data in, clean and structure it, categorise it, and turn it into something a non-technical person can read and act on. Personal finance was a good fit because everyone has the data and nobody enjoys looking at a spreadsheet of it.
 
-1. Clone the repository:
-```bash
-git clone https://github.com/shedipes95/MYAI-MVP.git
-cd MYAI-MVP
-```
+It's also where my two backgrounds meet — financial risk management (budgets, loans, spend analysis) and human-centred AI (an assistant that explains the numbers in plain language).
 
-2. Install dependencies:
-```bash
-npm install
-```
+## Key features
 
-3. Start the development server:
-```bash
-npm run dev
-```
+- **CSV ingest** — upload a bank statement and the app parses it into structured transactions, handling different column names and formats.
+- **Automatic categorisation** — each transaction is sorted into a spending category via a processing service, so you see "Groceries / Utilities / Mortgage" instead of raw merchant strings.
+- **Spending dashboard** — KPI cards (total spend, top category, transaction count) and a category pie chart built with Chart.js.
+- **Budget** — track planned vs. actual spending.
+- **Accounts** — overview of balances across accounts.
+- **Savings** — set goals and see progress, plus a savings-impact calculator.
+- **Loans** — track loans, APR and payment schedules.
+- **Insurance** — view home and car insurance details and quotes.
+- **AI chat assistant** — ask questions in plain English and get answers grounded in your actual transactions, budget, accounts, savings and loans.
+- **Auth + onboarding** — login, sign-up and a guided first-run flow with persistent sessions.
 
-4. Open your browser and navigate to `http://localhost:5173`
+## Tech stack
 
-## 🏗️ Project Structure
+- **React 18** + **TypeScript**
+- **Vite** (dev server and build)
+- **Zustand** for state management
+- **React Router** for routing
+- **Tailwind CSS** for styling
+- **Chart.js** / react-chartjs-2 for the data visualisations
+- **lucide-react** for icons
+- ESLint + Prettier for linting and formatting
+
+TypeScript makes up the large majority of the codebase.
+
+## How it's put together
 
 ```
 src/
-├── api/           # API client configuration
-├── components/    # Reusable UI components
-├── pages/         # Application pages/routes
-├── store/         # Zustand state management
-├── types.ts       # TypeScript type definitions
-└── utils/         # Utility functions and helpers
+├── api/         # transaction processing + insurance API clients
+├── components/  # UI: charts, KPI cards, drop zone, layout, etc.
+├── pages/       # Budget, Accounts, Loans, Insurance, Chat, Ingest, auth...
+├── services/    # the financial chat assistant logic
+├── store/       # Zustand app store
+├── utils/       # CSV parsing, formatting, downloads
+└── types.ts     # shared TypeScript types
 ```
 
-## 🖥️ Available Scripts
-
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run preview` - Preview production build
-- `npm run lint` - Run ESLint
-
-## 🔧 Development
-
-The application uses a modern development stack with:
-
-- **Hot Module Replacement** for fast development
-- **TypeScript** for type safety
-- **ESLint** for code quality
-- **Tailwind CSS** for responsive styling
-- **Component-based architecture** for maintainability
-
-## 📱 Responsive Design
-
-The application is fully responsive and works seamlessly across:
-- Desktop computers
-- Tablets
-- Mobile devices
-
-## 🚀 Deployment
-
-To build the project for production:
+## Run it
 
 ```bash
-npm run build
+git clone https://github.com/shedipes95/MYAI-MVP.git
+cd MYAI-MVP
+npm install
+npm run dev
 ```
 
-The built files will be in the `dist/` directory, ready for deployment to any static hosting service.
+Then open `http://localhost:5173`.
 
-## 🤝 Contributing
+The transaction categorisation and insurance lookups call external services, configured through environment variables (see `.env.local`). The rest of the dashboard — charts, budgets, savings, the chat assistant — runs in the browser, and there's sample data (`real-transactions.csv`) you can upload to try the ingest flow.
 
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+Other scripts:
 
-## 📄 License
+```bash
+npm run build     # type-check and build for production
+npm run preview   # preview the production build
+npm run lint      # run ESLint
+```
 
-This project is private and proprietary.
+## Status
 
----
-
-Built with ❤️ using React and TypeScript
+This is an MVP / portfolio project built to demonstrate the full data flow — raw input, cleaning, categorisation, and visualisation — in a working app rather than a notebook.
