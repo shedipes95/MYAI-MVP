@@ -2,6 +2,8 @@
 
 A single-page web app that turns a raw bank statement (CSV) into a clear picture of where your money goes, with budgets, savings goals, loans, insurance, and an AI assistant you can actually ask questions.
 
+**Live demo: [shedipes95.github.io/MYAI-MVP](https://shedipes95.github.io/MYAI-MVP/)** (front-end demo: sign in with any email and password).
+
 ## What it does
 
 You upload a bank CSV, the app cleans it up and sorts each transaction into a spending category, and then it shows you the numbers in a way that's easy to read: total spend, your biggest category, a breakdown by category, and a chat assistant that answers questions about your own data ("how much did I spend on groceries?", "where can I cut back?").
