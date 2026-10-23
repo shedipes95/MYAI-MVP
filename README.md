@@ -12,6 +12,8 @@ The categorisation runs through a backend service, so messy real-world descripti
 
 ## Why I built it
 
+This was a team project at the National AI Challenge Ireland. This repo is the front end, which I built; the transaction-categorisation and insurance services were separate back-end services.
+
 I'm moving into data and AI work, and I wanted a project that does the full loop end to end: take messy real data in, clean and structure it, categorise it, and turn it into something a non-technical person can read and act on. Personal finance was a good fit because everyone has the data and nobody enjoys looking at a spreadsheet of it.
 
 It's also where my two backgrounds meet — financial risk management (budgets, loans, spend analysis) and human-centred AI (an assistant that explains the numbers in plain language).
